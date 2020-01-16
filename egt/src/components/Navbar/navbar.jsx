@@ -6,11 +6,8 @@ function nav() {
 
     return (
         <>
-
-            <br />
-
             <Navbar bg="dark" variant="dark">
-                <Navbar.Brand href="#home">
+                <Navbar.Brand href="https://reactjs.org" target="_blank">
                     <img
                         alt=""
                         src={logo}
