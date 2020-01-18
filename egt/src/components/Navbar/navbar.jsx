@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Navbar } from 'react-bootstrap'
-import logo from '../../logo.svg'
+import logo from '../../essex_logo.gif'
 
 function nav() {
 
@@ -11,8 +11,8 @@ function nav() {
                     <img
                         alt=""
                         src={logo}
-                        width="30"
-                        height="30"
+                        width="150"
+                        height="50"
                         className="d-inline-block align-top"
                     />{' '}
                     React Bootstrap
