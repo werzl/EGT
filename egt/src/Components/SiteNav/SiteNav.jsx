@@ -13,12 +13,12 @@ function SiteNav() {
 
     return (
         <>
-            <LoginModal show={showLoginModal} closeModal={e => setShowLoginModal(false)}/>
+            <LoginModal show={showLoginModal} closeModal={e => setShowLoginModal(false)} />
 
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Navbar.Brand>
                     EGT
-            </Navbar.Brand>
+                </Navbar.Brand>
 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
