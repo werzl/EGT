@@ -10,6 +10,7 @@
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.4.1",
+    "env-cmd": "^10.1.0",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.17",
     "react-dom": "^16.12.0",
@@ -18,8 +19,8 @@
     "react-scripts": "3.4.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "env-cmd -f ./src/.env react-scripts start",
+    "build": "env-cmd -f ./src/.env react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

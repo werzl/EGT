@@ -4,11 +4,11 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-// TODO: Remove
 import { registerObserver } from "react-perf-devtool";
-registerObserver();
-
+// TODO: Remove
+console.info(`NODE_ENV: ${process.env.NODE_ENV}`);
 if (process.env.NODE_ENV === "development") {
+    registerObserver();
     const whyDidYouRender = require("@welldone-software/why-did-you-render");
     whyDidYouRender(React, {
         trackAllPureComponents: true,
