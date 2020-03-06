@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 import { Row, Col } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import SiteNav from "./Components/SiteNav/SiteNav";
@@ -67,5 +68,6 @@ function App() {
         </>
     );
 }
+App.whyDidYouRender = true;
 
 export default App;
