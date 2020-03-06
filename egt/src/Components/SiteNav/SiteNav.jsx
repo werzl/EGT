@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+import React, { useState } from "react";
+import { Navbar, Nav } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 
-//import logo from '../../essex_logo.gif';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+//import logo from "../../essex_logo.gif";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
 
-import LoginModal from '../Login/LoginModal';
+import LoginModal from "../Login/LoginModal";
 
 function SiteNav() {
     const [showLoginModal, setShowLoginModal] = useState(false);
 
     return (
         <>
-            <LoginModal show={showLoginModal} closeModal={e => setShowLoginModal(false)} />
+            <LoginModal show={showLoginModal} closeModal={() => setShowLoginModal(false)} />
 
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Navbar.Brand>
@@ -54,7 +54,7 @@ function SiteNav() {
                     </Nav>
 
                     <Nav>
-                        <Nav.Link onClick={e => setShowLoginModal(true)}><FontAwesomeIcon icon={faSignInAlt} /> Login</Nav.Link>
+                        <Nav.Link onClick={() => setShowLoginModal(true)}><FontAwesomeIcon icon={faSignInAlt} /> Login</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

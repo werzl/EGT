@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { Button, Modal } from 'react-bootstrap';
+import { Button, Modal } from "react-bootstrap";
 
 function LoginModal({ show, closeModal }) {
 
@@ -12,10 +12,10 @@ function LoginModal({ show, closeModal }) {
                 </Modal.Header>
                 <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={e => closeModal()}>
+                    <Button variant="secondary" onClick={() => closeModal()}>
                         Close
-                     </Button>
-                    <Button variant="primary" onClick={e => closeModal()}>
+                    </Button>
+                    <Button variant="primary" onClick={() => closeModal()}>
                         Save Changes
                     </Button>
                 </Modal.Footer>
