@@ -1,6 +1,9 @@
 {
   "name": "egt",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Grade tracking and prediction dashboard for University of Essex students.",
+  "homepage": "https://werzl.github.io/EGT/",
+  "author": "werzl",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
