@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  pull_request:
+    branches: master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./egt
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - uses: actions/setup-node@v1
+      
+    - run: yarn
+
+    - name: Install Packages ⏳
+      run: yarn install
+      working-directory: ${{env.working-directory}}
+   
+    - name: Build 🧱
+      run: yarn build
+      working-directory: ${{env.working-directory}}
+
+    - name: Run Tests 🧪
+      run: yarn test
+      working-directory: ${{env.working-directory}}
