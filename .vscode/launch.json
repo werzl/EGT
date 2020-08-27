@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug Hello Function",
+            "program": "${workspaceFolder}/aws/node_modules/.bin/sls",
+            "args": ["invoke", "local", "-f", "hello", "--data", "{}"],
+            "preLaunchTask": "tsc: build - aws/tsconfig.json",
+            "outFiles": [
+                "${workspaceFolder}/aws/lib/**/*.js"
+            ]
+        }
+    ]
+}

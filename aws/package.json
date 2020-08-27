@@ -1,0 +1,16 @@
+{
+  "name": "egt",
+  "version": "1.0.0",
+  "description": "Grade tracking and prediction dashboard for University of Essex students.",
+  "main": "handler.js",
+  "author": "werzl",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^26.4.2",
+    "nyc": "^15.1.0"
+  }
+}
