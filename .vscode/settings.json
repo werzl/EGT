@@ -3,5 +3,5 @@
     "jest.debugMode": true,
     "jest.pathToJest": "./aws/node_modules/jest/bin/jest.js",
     "jestrunner.jestPath": "./aws/node_modules/jest/bin/jest.js",
-    "jestrunner.configPath": "./aws/jest.config.js"
+    "jestrunner.configPath": "./aws/jest.config.js",
 }
