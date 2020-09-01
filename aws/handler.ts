@@ -11,8 +11,8 @@ interface getModulesEvent {
 module.exports.getModules = async (event: getModulesEvent) => {
 	console.info(`Received Event: ${JSON.stringify(event)}`);
 
-	//const moduleDirectoryBaseUrl = process.env.MODUlE_DIRECTORY_BASE_URL;
-	const moduleDirectoryBaseUrl = "https://www1.essex.ac.uk/modules/";
+	const moduleDirectoryBaseUrl = process.env.MODUlE_DIRECTORY_BASE_URL;
+	//const moduleDirectoryBaseUrl = "https://www1.essex.ac.uk/modules/";
 
 	if (!event.department) {
 		throw new errors.ArgumentNullException("event.department");
