@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "outDir": "dist",
+    "rootDir": ".",
+    "sourceMap": true,
+    "strict": false,
+    "listFiles": true,
+    "allowJs": true
+  },
+  "exclude": [
+    "dist/**",
+    "node_modules",
+    "jest.config.js",
+    "**/*.test.js"
+  ]
+}
