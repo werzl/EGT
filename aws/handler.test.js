@@ -11,9 +11,9 @@ describe("handler.js", () => {
 
             try {
                 // Act
-                await handler.getModule(event);
+                await handler.getModules(event);
             }
-            catch(e) {
+            catch (e) {
                 // Assert
                 expect(e.message).toEqual("Argument must not be null: event.department");
             }
@@ -27,9 +27,9 @@ describe("handler.js", () => {
 
             try {
                 // Act
-                await handler.getModule(event);
+                await handler.getModules(event);
             }
-            catch(e) {
+            catch (e) {
                 // Assert
                 expect(e.message).toEqual("Argument must not be null: event.academicYear");
             }
@@ -44,17 +44,17 @@ describe("handler.js", () => {
 
             try {
                 // Act
-                await handler.getModule(event);
+                await handler.getModules(event);
             }
-            catch(e) {
+            catch (e) {
                 // Assert
                 expect(e.message).toEqual("Argument must not be null: event.campus");
             }
         });
     });
 
-    describe("getModule", () => {
-        it("selects_department", async () => {
+    describe("getModules", () => {
+        it("returns_correct_module_data_PA", async () => {
             // Arrange
             const event = {
                 department: "PA",
@@ -62,8 +62,22 @@ describe("handler.js", () => {
                 campus: "CO"
             };
 
-            await handler.getModule(event);
+            const modules = await handler.getModules(event);
 
-        });
+            expect(modules[0].moduleCode).toEqual("PA108-4-SP-CO");
+        }, 30000);
+
+        it("returns_correct_module_data_CE", async () => {
+            // Arrange
+            const event = {
+                department: "CE",
+                academicYear: "20",
+                campus: "CO"
+            };
+
+            const modules = await handler.getModules(event);
+
+            expect(modules[0].moduleCode).toEqual("CE101-4-FY-CO");
+        }, 30000);
     });
 });

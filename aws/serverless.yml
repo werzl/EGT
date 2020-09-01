@@ -37,12 +37,12 @@ plugins:
 #    - exclude-me-dir/**
 
 functions:
-  getModule:
-    handler: dist/handler.getModule
+  getModules:
+    handler: dist/handler.getModules
 
     events:
       - http:
-          path: egt/getModule
+          path: egt/getModules
           method: post
 
     environment:
