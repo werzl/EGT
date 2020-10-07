@@ -1,31 +1,30 @@
-"use strict";
-const errors = require("./errors");
-const puppeteer = require("puppeteer");
+import { ArgumentNullException } from "./errors";
+import { launch } from "puppeteer";
 
-interface getModulesEvent {
+export interface getModulesEvent {
 	department: string,
 	academicYear: string,
 	campus: string
 };
 
-module.exports.getModules = async (event: getModulesEvent) => {
-	console.info(`Received Event: ${JSON.stringify(event)}`);
+export const getModules = async (event: getModulesEvent) => {
+	console.log(`Received Event: ${JSON.stringify(event)}`);
 
-	const moduleDirectoryBaseUrl = process.env.MODUlE_DIRECTORY_BASE_URL;
-	//const moduleDirectoryBaseUrl = "https://www1.essex.ac.uk/modules/";
+	//const moduleDirectoryBaseUrl = process.env.MODUlE_DIRECTORY_BASE_URL;
+	const moduleDirectoryBaseUrl = "https://www1.essex.ac.uk/modules/";
 
 	if (!event.department) {
-		throw new errors.ArgumentNullException("event.department");
+		throw new ArgumentNullException("event.department");
 	}
 
 	if (!event.academicYear) {
-		throw new errors.ArgumentNullException("event.academicYear");
+		throw new ArgumentNullException("event.academicYear");
 	}
 
 	if (!event.campus) {
-		throw new errors.ArgumentNullException("event.campus");
+		throw new ArgumentNullException("event.campus");
 	}
-	
+
 	const departmentSelector = "#ContentMain_ddDepartment";
 	const academicYearSelector = "#ContentMain_ddAcademicYear";
 	const campusSelector = "#ContentMain_ddCampus";
@@ -34,7 +33,7 @@ module.exports.getModules = async (event: getModulesEvent) => {
 	console.log(`Navigating to: ${moduleDirectoryBaseUrl}`);
 
 	const VIEWPORT = { width: 1920, height: 1080 };
-	const browser = await puppeteer.launch({headless: true, defaultViewport: VIEWPORT});
+	const browser = await launch({ headless: true, defaultViewport: VIEWPORT });
 	const page = await browser.newPage();
 	await page.goto(moduleDirectoryBaseUrl);
 
@@ -50,7 +49,7 @@ module.exports.getModules = async (event: getModulesEvent) => {
 		page.waitForNavigation(),
 		page.click(searchButtonSelector)
 	]);
-	
+
 	console.log(`Retrieving Modules from page: ${page.url()}`);
 
 	const modules = await page.evaluate(() => {

@@ -1,7 +1,6 @@
-const handler = require("./dist/handler");
-const errors = require("./dist/errors");
+import { getModules } from "./handler";
 
-describe("handler.js", () => {
+describe("getModules", () => {
     describe("event", () => {
         it("missing_department_throws_ArgumentNullException", async () => {
             // Arrange
@@ -11,7 +10,7 @@ describe("handler.js", () => {
 
             try {
                 // Act
-                await handler.getModules(event);
+                await getModules(event);
             }
             catch (e) {
                 // Assert
@@ -27,7 +26,7 @@ describe("handler.js", () => {
 
             try {
                 // Act
-                await handler.getModules(event);
+                await getModules(event);
             }
             catch (e) {
                 // Assert
@@ -44,7 +43,7 @@ describe("handler.js", () => {
 
             try {
                 // Act
-                await handler.getModules(event);
+                await getModules(event);
             }
             catch (e) {
                 // Assert
@@ -53,8 +52,8 @@ describe("handler.js", () => {
         });
     });
 
-    describe("getModules", () => {
-        it("returns_correct_module_data_PA", async () => {
+    describe("returns", () => {
+        it("correct_module_data_PA", async () => {
             // Arrange
             const event = {
                 department: "PA",
@@ -62,12 +61,12 @@ describe("handler.js", () => {
                 campus: "CO"
             };
 
-            const modules = await handler.getModules(event);
+            const modules = await getModules(event);
 
             expect(modules[0].moduleCode).toEqual("PA108-4-SP-CO");
         }, 30000);
 
-        it("returns_correct_module_data_CE", async () => {
+        it("correct_module_data_CE", async () => {
             // Arrange
             const event = {
                 department: "CE",
@@ -75,7 +74,7 @@ describe("handler.js", () => {
                 campus: "CO"
             };
 
-            const modules = await handler.getModules(event);
+            const modules = await getModules(event);
 
             expect(modules[0].moduleCode).toEqual("CE101-4-FY-CO");
         }, 30000);

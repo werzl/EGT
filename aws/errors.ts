@@ -1,4 +1,4 @@
-class ArgumentException extends Error {
+export class ArgumentException extends Error {
     argument: string;
 
     constructor(argument: string, message: string) {
@@ -9,13 +9,9 @@ class ArgumentException extends Error {
     }
 };
 
-module.exports.ArgumentException = ArgumentException;
-
-
-class ArgumentNullException extends ArgumentException {
+export class ArgumentNullException extends ArgumentException {
     constructor(argument: string) {
         super(argument, `Argument must not be null: ${argument}`);
         this.name = "ArgumentNullException";
     }
 }
-module.exports.ArgumentNullException = ArgumentNullException;
