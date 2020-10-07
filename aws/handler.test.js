@@ -1,7 +1,6 @@
-const handler = require("./dist/handler");
-const errors = require("./dist/errors");
+import { getModules } from "./handler";
 
-describe("handler.js", () => {
+describe("js", () => {
     describe("event", () => {
         it("missing_department_throws_ArgumentNullException", async () => {
             // Arrange
@@ -11,7 +10,7 @@ describe("handler.js", () => {
 
             try {
                 // Act
-                await handler.getModules(event);
+                await getModules(event);
             }
             catch (e) {
                 // Assert
@@ -27,7 +26,7 @@ describe("handler.js", () => {
 
             try {
                 // Act
-                await handler.getModules(event);
+                await getModules(event);
             }
             catch (e) {
                 // Assert
@@ -44,7 +43,7 @@ describe("handler.js", () => {
 
             try {
                 // Act
-                await handler.getModules(event);
+                await getModules(event);
             }
             catch (e) {
                 // Assert
@@ -62,7 +61,7 @@ describe("handler.js", () => {
                 campus: "CO"
             };
 
-            const modules = await handler.getModules(event);
+            const modules = await getModules(event);
 
             expect(modules[0].moduleCode).toEqual("PA108-4-SP-CO");
         }, 30000);
@@ -75,7 +74,7 @@ describe("handler.js", () => {
                 campus: "CO"
             };
 
-            const modules = await handler.getModules(event);
+            const modules = await getModules(event);
 
             expect(modules[0].moduleCode).toEqual("CE101-4-FY-CO");
         }, 30000);

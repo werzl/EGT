@@ -10,7 +10,9 @@
     "watch": "tsc -w",
     "test": "tsc && jest"
   },
-  "dependencies": {},
+  "dependencies": {
+    "ts-jest": "^26.4.1"
+  },
   "devDependencies": {
     "@types/jest": "^26.0.10",
     "jest": "^26.4.2",
