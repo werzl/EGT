@@ -1,6 +1,6 @@
-import { getModules } from "./dist/handler";
+import { getModules } from "./handler";
 
-describe("js", () => {
+describe("getModules", () => {
     describe("event", () => {
         it("missing_department_throws_ArgumentNullException", async () => {
             // Arrange
@@ -52,8 +52,8 @@ describe("js", () => {
         });
     });
 
-    describe("getModules", () => {
-        it("returns_correct_module_data_PA", async () => {
+    describe("returns", () => {
+        it("correct_module_data_PA", async () => {
             // Arrange
             const event = {
                 department: "PA",
@@ -66,7 +66,7 @@ describe("js", () => {
             expect(modules[0].moduleCode).toEqual("PA108-4-SP-CO");
         }, 30000);
 
-        it("returns_correct_module_data_CE", async () => {
+        it("correct_module_data_CE", async () => {
             // Arrange
             const event = {
                 department: "CE",
