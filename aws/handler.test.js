@@ -1,4 +1,4 @@
-import { getModules } from "./handler";
+import { getModules } from "./dist/handler";
 
 describe("js", () => {
     describe("event", () => {
